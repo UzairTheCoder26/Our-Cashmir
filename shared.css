@@ -5,6 +5,7 @@
     text-decoration: none;
     font-family: "poppins";
     color: white;
+    box-sizing: border-box;
     --primary-color: #8F98FF;
     --secondary-color: #bac0ff;
     --primary-bg: #020215;
