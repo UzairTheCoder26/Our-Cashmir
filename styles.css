@@ -534,7 +534,7 @@ Videos
     display: flex;
     justify-content: space-between;
     gap: 2.5rem;
-    flex-wrap: wrap; /* added this for better responsiveness */
+    /* flex-wrap: wrap; added this for better responsiveness */
 }
 
 .portfolio .portfolio-vid {
@@ -548,17 +548,17 @@ Videos
 
 /* --- Wistia Player Responsive Fix --- */
 wistia-player {
-    width: 100% !important;
-    max-width: 100% !important;
+    /* width: 100% !important; */
+    /* max-width: 100% !important; */
     height: auto !important;
-    aspect-ratio: 16 / 9 !important;
-    display: block;
+    /* aspect-ratio: 16 / 9 !important; */
+    /* display: block; */
     border-radius: 0.75rem;
     overflow: hidden;
 }
 
 .wistia_responsive_wrapper {
-    max-width: 100% !important;
+    /* max-width: 100% !important; */
     height: auto !important;
 }
 
@@ -578,7 +578,7 @@ wistia-player {
 
     wistia-player {
         width: 100% !important;
-        aspect-ratio: 9 / 16 !important;
+        /* aspect-ratio: 9 / 16 !important; */
     }
 }
 
