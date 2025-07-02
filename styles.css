@@ -160,7 +160,7 @@ section.about .container .text-container h2 {
 }
 
 section.about .container .text-container p {
-    font-family: "montserrat";
+    /* font-family: "montserrat" ; */
     font-weight: 500;
     line-height: 30px;
     font-size: 1.2rem;
@@ -181,7 +181,7 @@ section.about .container .text-container .box h3 {
 }
 
 section.about .container .text-container .box p {
-    font-family: "montserrat";
+    /* font-family: "montserrat"; */
     line-height: 25px;
     font-size: 1rem;
     margin-bottom: 0;
@@ -495,7 +495,7 @@ section.expertise .container .service h2{
     margin-bottom: 1.5rem;
 }
 section.expertise .container .service p{
-    font-family: "montserrat";
+    /* font-family: "montserrat"; */
     font-size: 1.2rem;
     line-height: 130%;
 }
@@ -676,7 +676,7 @@ section.testimonials .container .testimonial{
 }
 
 section.testimonials .container .testimonial p{
-    font-family: "montserrat";
+    /* font-family: "montserrat"; */
     font-weight: 600;
     font-size: 1.2rem;
     line-height: 150%;
