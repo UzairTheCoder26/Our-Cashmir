@@ -799,7 +799,7 @@ section.qns-ans .faq.active {
 /* ----------------------------------------------------
 Team Section
 ---------------------------------------------------- */
-/* 
+
 section.team {
     padding: 5rem 5rem 0 5rem;
     margin-top: 5rem !important;
@@ -856,25 +856,25 @@ section.team .container .team-member .icons{
 section.team .container .team-member img{
     height: 2.5rem;
     border-radius: 50%;
-    /* border: 2px solid var(--primary-stroke); */
-    /*
+    border: 2px solid var(--primary-stroke); 
+    
     box-shadow: 0 0 10px var(--primary-color);
 
     margin-top: 1rem;
 }
-/*
+
 section.team .container .member-1{
-    background-image: url('/Images/Team/Asnan.png');
-}
-section.team .container .member-2{
     background-image: url('/Images/Team/Uzair.png');
 }
-section.team .container .member-3{
+section.team .container .member-2{  
     background-image: url('/Images/Team/Huzaif.png');
 }
+section.team .container .member-3{
+    background-image: url('/Images/Team/Haadi.png');
+}
 section.team .container .member-4{
-    background-image: url('/Images/Team/Farhan.png');
-} */
+    background-image: url('/Images/Team/Uzair.png');
+} 
 /*--------------------------
 Book a Call Section
 -----------------------------*/
