@@ -6,11 +6,11 @@
     font-family: "poppins";
     color: white;
     box-sizing: border-box;
-    --primary-color: #8F98FF;
+    --primary-color: #88fa62;
     --secondary-color: #bac0ff;
-    --primary-bg: #020215;
-    --secondary-bg: #170e34;
-    --primary-stroke: #404ca4;
+    --primary-bg: #02221a;
+    --secondary-bg: #0b3f32;
+    --primary-stroke: #409471;
     --primary-white: #dedede;
 }
 

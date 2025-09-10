@@ -196,11 +196,11 @@ Header
 
 header {
     background: linear-gradient(to bottom,
-            #020012 0%,
+            var(--primary-bg) 0%,
             /* Start color (solid red) at the top */
-            #020012 20%,
+           var(--primary-bg) 20%,
             /* Start color (solid blue) at 20% height */
-            #020012d0 50%,
+            var(--primary-bg) 50%,
             /* Start color (solid green) at 50% height */
             rgba(0, 255, 0, 0) 100%
             /* Transparent color at the bottom */
