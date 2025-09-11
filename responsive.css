@@ -860,11 +860,6 @@ Book a Call
 /* -----------------------------------------
 FAQs Responsive
 ----------------------------------------- */
-@media screen and (max-width: 1200px) {
-    section.qns-ans {
-      /* max-width: 90%; */
-    }
-   }
    
    @media screen and (max-width: 768px) {
     section.qns-ans {
