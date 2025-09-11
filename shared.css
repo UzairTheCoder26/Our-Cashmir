@@ -242,7 +242,7 @@ header nav .hdr-cta:hover a {
 }
 
 .toggle-btn i {
-    color: hsl(0, 0%, 100%) !important;
+    color: var(--primary-color) !important;
 
 }
 
