@@ -862,7 +862,7 @@ FAQs Responsive
 ----------------------------------------- */
 @media screen and (max-width: 1200px) {
     section.qns-ans {
-      max-width: 90%;
+      /* max-width: 90%; */
     }
    }
    
@@ -888,9 +888,25 @@ FAQs Responsive
     .pannel p {
       font-size: 1.1rem;
     }
+     
    }
    
    @media screen and (max-width: 576px) {
+  
+ section.our-clients .clients {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* always 2 columns */
+  gap: 16px; /* optional spacing */
+}
+
+section.our-clients .clients .client:last-child:nth-child(odd) {
+  grid-column: 1 / -1;       /* make it span both columns */
+  justify-self: center;      /* center it */
+}
+section.our-clients .clients .client img {
+  scale: 0.95; 
+}
+
     section.qns-ans {
       padding: 2rem 1rem 0 1rem;
       margin: 2rem auto;
