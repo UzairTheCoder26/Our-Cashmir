@@ -52,17 +52,48 @@ section.our-clients {
 
 }
 
-.filter-buttons button {
-    background: #21e855;
-    border: none;
-    padding: 10px 18px;
-    margin: 0 auto 3rem auto;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s;
-    color: #000;
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 3rem;
 }
+
+.filter-buttons button {
+  background: #21e855;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+  color: #000;
+  font-size: 14px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .filter-buttons {
+    gap: 8px;
+    margin-bottom: 2rem;
+  }
+
+  .filter-buttons button {
+    padding: 8px 12px;
+    font-size: 13px;
+    flex: 1 1 calc(50% - 16px); /* 2 buttons per row */
+    max-width: 48%;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-buttons button {
+    flex: 1 1 100%; /* Stack neatly for very small screens */
+    max-width: 100%;
+  }
+}
+
 
 .filter-buttons .active {
     background: #000;
