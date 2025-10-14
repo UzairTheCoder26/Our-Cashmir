@@ -74,7 +74,7 @@ section.our-clients .clients {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center !important; 
     gap: 1.5rem;
 
 }
