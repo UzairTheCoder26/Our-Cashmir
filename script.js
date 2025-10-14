@@ -151,4 +151,28 @@ function handleScroll() {
                   duration: 100,
                   once: true
                 });
-  
+//   -- ---------------------------------------------------
+// Filter Script
+// --------------------------------------------------- --
+        
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const clients = document.querySelectorAll('.client');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active state from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filter = btn.dataset.filter;
+
+                    clients.forEach(client => {
+                        if (filter === 'all' || client.dataset.category === filter) {
+                            client.style.display = 'inline-block';
+                        } else {
+                            client.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        
