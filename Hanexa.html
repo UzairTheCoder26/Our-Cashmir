@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HANEXA — E‑Commerce Website Package</title>
+  <meta name="description" content="HANEXA e‑commerce website package — secure hosting, shop features, payment integrations, mobile responsive, admin panel and more."/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ---------- Theme vars ---------- */
+    :root{
+      --primary-color:#21e855;
+      --primary-bg:#021A2C;
+      --primary-stroke: rgba(255,255,255,0.06);
+      --primary-white: #f7f9fb;
+      --secondary-bg: rgba(255,255,255,0.03);
+      --accent: #ff7830;
+      --max-width: 1100px;
+    }
+    /* ---------- Reset & base ---------- */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; background:linear-gradient(180deg,#031021 0%, #00111a 100%); color:var(--primary-white); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .container{max-width:var(--max-width);margin:0 auto;padding:0 1.25rem}
+
+    header{padding:1.25rem 0;position:sticky;top:0;backdrop-filter: blur(6px);background:linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.15));z-index:50;border-bottom:1px solid rgba(255,255,255,0.03)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{display:flex;align-items:center;gap:.75rem;font-weight:700}
+    .brand .logo{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--primary-color),var(--accent));display:inline-block}
+    .nav .links{display:flex;gap:1rem;align-items:center}
+    .nav .links a{padding:.5rem .75rem;border-radius:6px;font-weight:600;font-size:.95rem}
+    .nav .cta{background:var(--primary-color);color:#000;padding:.5rem .85rem;border-radius:8px;font-weight:700}
+
+    /* ---------- Hero ---------- */
+    .hero{padding:3.25rem 0;display:grid;grid-template-columns:1fr 460px;gap:2rem;align-items:center}
+    .hero .left h1{font-size:2.2rem;line-height:1.02;color:var(--primary-white);margin-bottom:.6rem}
+    .hero .left p{color:rgba(255,255,255,0.86);font-size:1rem;margin-bottom:1.25rem}
+    .hero .kpis{display:flex;gap:1rem;flex-wrap:wrap}
+    .kpi{background:var(--secondary-bg);border:1px solid var(--primary-stroke);padding:.75rem 1rem;border-radius:10px;min-width:110px;text-align:center}
+    .kpi strong{display:block;font-size:1.05rem;color:var(--primary-color)}
+
+    .hero .right{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid var(--primary-stroke);padding:1.25rem;border-radius:1rem}
+    .pricing-badge{display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem}
+    .price{font-size:1.75rem;font-weight:800;color:var(--primary-color)}
+    .pill{background:rgba(255,255,255,0.04);padding:.35rem .6rem;border-radius:999px;font-weight:600}
+    .features-list{display:grid;gap:.5rem}
+    .features-list li{list-style:none;padding:.45rem 0;border-bottom:1px dashed rgba(255,255,255,0.03);font-size:.95rem}
+    .cta-row{display:flex;gap:.6rem;margin-top:1rem}
+    .cta-row a{flex:1;padding:.65rem;border-radius:.6rem;display:inline-block;text-align:center;font-weight:700}
+    .cta-primary{background:var(--primary-color);color:#000}
+    .cta-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06)}
+
+    /* ---------- Features ---------- */
+    .features{padding:2.5rem 0}
+    .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .feature-card{background:var(--secondary-bg);border:1px solid var(--primary-stroke);padding:1rem;border-radius:12px}
+    .feature-card h3{color:var(--primary-color);margin-bottom:.4rem}
+
+    /* ---------- Clients (logos) ---------- */
+    .clients-wrap{padding:2rem 0}
+    .clients-grid{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:center}
+    .client-card{background:rgba(255,255,255,0.02);padding:.5rem;border-radius:8px;border:1px solid var(--primary-stroke);width:160px;height:64px;display:flex;align-items:center;justify-content:center}
+    .client-card a{font-size:.85rem;color:rgba(255,255,255,0.8);}
+
+    /* ---------- Full feature table / bullets ---------- */
+    .feature-full{display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding:1rem 0}
+    .feature-full ul{list-style:disc;padding-left:1.2rem}
+
+    /* ---------- FAQ / accordion ---------- */
+    .faq{margin-top:1.25rem}
+    .faq .q{background:var(--secondary-bg);padding:.9rem;border-radius:10px;margin-bottom:.6rem;border:1px solid var(--primary-stroke)}
+    .q h4{font-size:1rem}
+    .q p{color:rgba(255,255,255,0.8);font-size:.94rem;margin-top:.35rem}
+
+    /* ---------- Contact / form ---------- */
+    .contact{padding:2rem 0}
+    form{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    input,textarea,select{padding:.75rem;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--primary-white)}
+    textarea{grid-column:1/-1;min-height:120px}
+    .form-row{display:flex;gap:.5rem}
+    button[type=submit]{background:var(--primary-color);color:#000;padding:.8rem;border-radius:10px;border:none;font-weight:700}
+
+    /* ---------- Footer ---------- */
+    footer{padding:2rem 0;border-top:1px solid rgba(255,255,255,0.03);margin-top:2rem}
+    .foot-grid{display:flex;gap:2rem;flex-wrap:wrap;justify-content:space-between}
+    .foot-grid div{min-width:180px}
+
+    /* ---------- Responsive ---------- */
+    @media (max-width:1000px){
+      .hero{grid-template-columns:1fr 360px}
+      .features-grid{grid-template-columns:repeat(2,1fr)}
+      .feature-full{grid-template-columns:1fr}
+      form{grid-template-columns:1fr}
+    }
+    @media (max-width:720px){
+      :root{--max-width:900px}
+      .nav .links{display:none}
+      .hero{grid-template-columns:1fr;gap:1rem}
+      .hero .right{order:2}
+      .hero .left{order:1}
+      .brand{gap:.5rem}
+      .hero .left h1{font-size:1.6rem}
+      .kpi{min-width:90px}
+      .features-grid{grid-template-columns:1fr}
+      .clients-grid{gap:.5rem}
+      .client-card{width:48%;height:56px}
+    }
+    @media (max-width:420px){
+      body{font-size:14px}
+      .client-card{width:100%}
+      .pill{font-size:.85rem}
+      .price{font-size:1.25rem}
+      .cta-row{flex-direction:column}
+      .cta-row a{padding:.6rem}
+    }
+
+    /* small helper */
+    .muted{color:rgba(255,255,255,0.65)}
+    .section-title{display:flex;align-items:center;gap:.75rem;margin:1.25rem 0}
+    .divider{height:1px;background:rgba(255,255,255,0.03);margin:1rem 0;border-radius:2px}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="logo"></span><div>HANEXA <small class="muted">E‑Commerce Package</small></div></div>
+      <nav class="links">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#clients">Clients</a>
+        <a href="#contact" class="cta">Book a Call</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" aria-label="hero">
+      <div class="left">
+        <h1>Launch your online store — fast, secure &amp; mobile‑first.</h1>
+        <p>HANEXA ships a production‑ready store with hosting, payments, shipping, admin panel and 15 days of support — focus on selling, not setup.</p>
+
+        <div class="kpis">
+          <div class="kpi"><small>From</small><strong>₹16,000</strong><span class="muted">E‑Commerce Starter</span></div>
+          <div class="kpi"><small>Mobile Ready</small><strong>✅</strong></div>
+          <div class="kpi"><small>Support</small><strong>15 days</strong></div>
+        </div>
+
+        <div class="section-title"><h3 style="margin:0">What you'll get</h3></div>
+        <div class="feature-full">
+          <ul>
+            <li>Secure & reliable hosting + Free SSL</li>
+            <li>Unlimited products & pages, custom product fields</li>
+            <li>Cart, Checkout, My Account, Orders & Tracking</li>
+            <li>Payment Gateway & Shipping Integration</li>
+            <li>Coupon codes, Wallet system & Custom shipping rules</li>
+          </ul>
+          <ul>
+            <li>Bulk product upload & CSV export</li>
+            <li>Email order notifications, invoices & packing slips</li>
+            <li>Admin panel (add products, view orders)</li>
+            <li>SEO friendly structure & Google Search Console setup</li>
+            <li>Contact form, WhatsApp chat button & business email</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <aside class="right" aria-hidden="false">
+        <div class="pricing-badge">
+          <div><span class="pill">E‑Commerce Starter</span></div>
+          <div class="price">₹16,000/-</div>
+        </div>
+        <div style="font-size:.95rem;margin-bottom:.5rem" class="muted">Includes 1 year validity and 15 days support. Custom features billed separately.</div>
+
+        <ul class="features-list">
+          <li>Complete store + payment & shipping</li>
+          <li>Admin panel & product import</li>
+          <li>Invoice generation & order tracking</li>
+          <li>Mobile responsive & SEO friendly</li>
+        </ul>
+
+        <div class="cta-row">
+          <a href="#contact" class="cta-primary">Book a Call</a>
+          <a href="#clients" class="cta-ghost">See Live Sites</a>
+        </div>
+      </aside>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="features" class="features">
+      <div class="section-title"><h3 style="margin:0">Deep feature breakdown</h3><small class="muted">Everything included and optional add‑ons</small></div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Store Core</h3>
+          <p class="muted">Products, categories, variations, custom fields, bulk import/export.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Checkout & Payments</h3>
+          <p class="muted">Payment gateway integration (UPI/Netbanking/cards), wallet support, coupon codes.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Shipping & Orders</h3>
+          <p class="muted">Custom shipping charges, tracking, invoices & packing slips, order notifications.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Admin Panel</h3>
+          <p class="muted">Add/edit products, process orders, export data, manage coupons and shipping rules.</p>
+        </div>
+        <div class="feature-card">
+          <h3>SEO & Analytics</h3>
+          <p class="muted">SEO friendly markup, sitemap, Google Search Console submission.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Support & Hosting</h3>
+          <p class="muted">Secure hosting, free SSL, email setup and 15 days of support. Optional maintenance plans available.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="clients" class="clients-wrap">
+      <div class="section-title"><h3 style="margin:0">Some of our clients</h3><small class="muted">Live sites built or inspired by our design standards</small></div>
+      <div class="clients-grid">
+        <!-- Use real logos if available; these are link placeholders -->
+        <div class="client-card"><a href="https://printkart.co.in" target="_blank" rel="noopener">printkart.co.in</a></div>
+        <div class="client-card"><a href="https://impresskart.com" target="_blank" rel="noopener">impresskart.com</a></div>
+        <div class="client-card"><a href="https://aoneprint.co.in" target="_blank" rel="noopener">aoneprint.co.in</a></div>
+        <div class="client-card"><a href="https://mounicrafts.com" target="_blank" rel="noopener">mounicrafts.com</a></div>
+        <div class="client-card"><a href="https://presentbliss.in" target="_blank" rel="noopener">presentbliss.in</a></div>
+        <div class="client-card"><a href="https://topprint.in" target="_blank" rel="noopener">topprint.in</a></div>
+        <div class="client-card"><a href="https://rainbowmultiprint.com" target="_blank" rel="noopener">rainbowmultiprint.com</a></div>
+        <div class="client-card"><a href="https://www.acetechgadgets.com" target="_blank" rel="noopener">acetechgadgets.com</a></div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="pricing" id="pricing">
+      <div class="section-title"><h3 style="margin:0">Pricing</h3><small class="muted">Clear, no‑surprise pricing</small></div>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem">
+        <div class="feature-card" style="flex:1;min-width:220px">
+          <h3>HANEXA E‑Commerce Starter</h3>
+          <p class="muted">Complete e‑commerce, hosting, SSL, admin, 15 days support</p>
+          <div style="margin-top:1rem;font-weight:800;font-size:1.25rem;color:var(--primary-color)">₹16,000/-</div>
+        </div>
+        <div class="feature-card" style="flex:1;min-width:220px">
+          <h3>Portfolio (Frontend only)</h3>
+          <p class="muted">Clean responsive design — ideal for professionals</p>
+          <div style="margin-top:1rem;font-weight:800;font-size:1.25rem;color:var(--primary-color)">₹3,000/-</div>
+        </div>
+        <div class="feature-card" style="flex:1;min-width:220px">
+          <h3>Portfolio + Backend</h3>
+          <p class="muted">Frontend + backend + DB</p>
+          <div style="margin-top:1rem;font-weight:800;font-size:1.25rem;color:var(--primary-color)">₹10,000/-</div>
+        </div>
+      </div>
+
+      <div class="muted" style="margin-top:1rem">Note: Custom work quoted separately. Payment gateway, shipping APIs or third‑party integrations may incur third‑party fees.</div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="faq">
+      <div class="section-title"><h3 style="margin:0">FAQs</h3></div>
+      <div class="q"><h4>What does "1 year validity" mean?</h4><p>Hosting, SSL and basic support are included for the first 12 months. Renewal/maintenance after that is billed separately.</p></div>
+      <div class="q"><h4>Can you integrate my preferred payment gateway?</h4><p>Yes — we support major Indian gateways (Razorpay, PayU) and international providers. Extra gateway setup fees may apply.</p></div>
+      <div class="q"><h4>How long does delivery take?</h4><p>Typical delivery: 7–21 business days depending on scope and content readiness.</p></div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="contact" class="contact">
+      <div class="section-title"><h3 style="margin:0">Book a call / Request quote</h3><small class="muted">Tell us a bit about your project — we'll get back quickly.</small></div>
+      <form onsubmit="handleSubmit(event)">
+        <input name="name" placeholder="Your name" required />
+        <input name="phone" placeholder="Phone / WhatsApp" required />
+        <input name="email" placeholder="Email (optional)" />
+        <select name="package">
+          <option value="ecommerce">HANEXA E‑Commerce Starter - ₹16,000</option>
+          <option value="portfolio-frontend">Portfolio — Frontend Only - ₹3,000</option>
+          <option value="portfolio-backend">Portfolio + Backend - ₹10,000</option>
+        </select>
+        <textarea name="message" placeholder="Brief project details (products, integrations needed, timeline)"></textarea>
+        <button type="submit">Request Quote</button>
+      </form>
+      <div style="margin-top:1rem;color:rgba(255,255,255,0.6);font-size:.95rem">Or WhatsApp us directly: <a href="https://wa.me/919999999999" target="_blank">+91 99999 99999</a></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container foot-grid">
+      <div>
+        <div style="font-weight:800">HANEXA</div>
+        <div class="muted">E‑Commerce website packages • Support • Hosting</div>
+      </div>
+      <div>
+        <div style="font-weight:700">Contact</div>
+        <div class="muted">hello@hanexa.com<br/>+91 99999 99999</div>
+      </div>
+      <div>
+        <div style="font-weight:700">Links</div>
+        <div class="muted"><a href="#features">Features</a> · <a href="#pricing">Pricing</a> · <a href="#contact">Contact</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function handleSubmit(e){
+      e.preventDefault();
+      const f = e.target;
+      const data = Object.fromEntries(new FormData(f).entries());
+      // lightweight client-side validation / demo action
+      if(!data.name || !data.phone){
+        alert('Please add your name and phone.');
+        return;
+      }
+      // fake send for demo — replace with your actual endpoint / Netlify function
+      console.log('quote request',data);
+      alert('Thanks! Your request was sent. We will contact you shortly.');
+      f.reset();
+    }
+  </script>
+</body>
+</html>
